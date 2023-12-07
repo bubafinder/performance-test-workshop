@@ -1,0 +1,23 @@
+{
+  "name": "performance-test-workshop",
+  "version": "1.0.0",
+  "description": "Used as a template for workshop",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "k6": "dotenv -e .env k6 run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bubafinder/performance-test-workshop.git"
+  },
+  "author": "Marko Lovric",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-plugin-prettier": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
+    "http-status": "^1.7.0"
+  }
+}
