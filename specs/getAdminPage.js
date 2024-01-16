@@ -10,12 +10,11 @@ export default function () {
   const { username, password } = users[0];
   const accessToken = req.postSignIn(username, password);
 
-  req.getAdminPage(accessToken);
+  req.getUserPage(accessToken);
 }
 
 export function handleSummary(data) {
   return {
-    'summary.json': JSON.stringify(data),
     'result.html': htmlReport(data),
     stdout: textSummary(data, { indent: ' ', enableColors: true })
   };
