@@ -12,13 +12,16 @@ import { users } from '../helpers/data.js';
 export const options = option.iterations(20, 20);
 
 export default function () {
+  getHomepage();
+  randomSleep();
+  
   const { username, email, password } = users[exec.vu.idInTest - 1];
-
+  
   postSignup(username, email, password);
+  randomSleep();
 
   const accessToken = postSignIn(username, password);
-
-  getHomepage();
+  
   randomSleep();
   getUserPage(accessToken);
 }
