@@ -1,12 +1,12 @@
-import { getAdminPage, postSignIn } from '../requests/index.js';
+import { getUserPage, postSignIn } from '../requests/index.js';
 import * as option from '../helpers/options.js';
 import { users } from '../helpers/data.js';
 
-export const options = option.iterations(1, 1);
+export const options = option.iterations(10, 10);
 
 export default function () {
   const { username, password } = users[0];
   const accessToken = postSignIn(username, password);
 
-  getAdminPage(accessToken);
+  getUserPage(accessToken);
 }

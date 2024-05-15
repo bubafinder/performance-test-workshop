@@ -1,4 +1,4 @@
-import { getAdminPage, postSignIn } from '../requests/index.js';
+import { getModeratorPage, postSignIn } from '../requests/index.js';
 import * as option from '../helpers/options.js';
 import { users } from '../helpers/data.js';
 
@@ -8,5 +8,5 @@ export default function () {
   const { username, password } = users[0];
   const accessToken = postSignIn(username, password);
 
-  getAdminPage(accessToken);
+  getModeratorPage(accessToken);
 }
