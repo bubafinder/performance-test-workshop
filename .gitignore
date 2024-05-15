@@ -1,5 +1,4 @@
 node_modules
-result.html
-summary.json
+performance-test-report.html
 package-lock.json
 .env
