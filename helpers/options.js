@@ -1,5 +1,3 @@
-import { projectID } from '../helpers/config.js';
-
 /**
  * Configuration if you want to control the maximum number of requests to make
  * per second globally.
@@ -17,11 +15,6 @@ export function rps(userCount, rps, duration, failureRate = '===0') {
     vus: userCount,
     rps,
     duration,
-    ext: {
-      loadimpact: {
-        projectID,
-      },
-    },
     thresholds: {
       http_req_failed: [`rate${failureRate}`],
     },
@@ -52,11 +45,6 @@ export function stages(
       { duration, target: userCount },
       { duration: rampDownDuration, target: 0 },
     ],
-    ext: {
-      loadimpact: {
-        projectID,
-      },
-    },
     thresholds: {
       http_req_failed: [`rate${failureRate}`],
     },
@@ -78,11 +66,6 @@ export function iterations(userCount, iterationCount, failureRate = '===0') {
   return {
     vus: userCount,
     iterations: iterationCount,
-    ext: {
-      loadimpact: {
-        projectID,
-      },
-    },
     thresholds: {
       http_req_failed: [`rate${failureRate}`],
     },

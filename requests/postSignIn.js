@@ -1,10 +1,9 @@
-import { baseUrl } from '../helpers/config.js';
 import isStatusOk from '../helpers/isStatusOk.js';
 import http from 'k6/http';
 
 export default function (username, password) {
   const postSignIn = http.post(
-    `${baseUrl}/api/auth/signin`,
+    `${__ENV.BASE_URL}/api/auth/signin`,
     {
       username,
       password
