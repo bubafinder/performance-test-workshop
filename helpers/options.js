@@ -71,3 +71,29 @@ export function iterations(userCount, iterationCount, failureRate = '===0') {
     },
   };
 }
+
+/**
+ * Configuration for browser run.
+ * Send only desired number of users and number of iterations.
+ *
+ * @param   userCount  Number of VUs to run concurrently.
+ * @param   iterationCount  Number of exec function iterations to be
+ * executed in total.
+ * @returns k6 option object.
+ */
+export function browser(userCount, iterationCount) {
+  return {
+    scenarios: {
+      ui: {
+        executor: 'shared-iterations',
+        vus: userCount,
+        iterations: iterationCount,
+        options: {
+          browser: {
+            type: 'chromium',
+          },
+        },
+      },
+    },
+  };
+}
